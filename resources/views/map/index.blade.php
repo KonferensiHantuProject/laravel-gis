@@ -24,7 +24,7 @@
 
 // Controll Map View
 let map = L.map('map', {
-    center: [51.505, -0.09],
+    center: [41.505, -0.09],
     zoom: 15
 });
 
