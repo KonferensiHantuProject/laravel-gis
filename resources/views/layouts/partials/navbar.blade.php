@@ -9,8 +9,14 @@
           <li class="nav-item">
             <a class="nav-link active text-white" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/map">Map</a>
+          <li class="nav-item dropdown">
+            <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/map">Map</a></li>
+              <li><hr class="dropdown-divider"></li>
+            </ul>
           </li>
         </ul>
       </div>

@@ -27,11 +27,12 @@
     {{-- Navbar --}}
     @include('Layouts/partials.footer')
   
+    {{-- Jquery --}}
+    <script src="{{ asset('JS/javascript.js') }}"></script>
+    
     <!-- JS Bootstrap -->
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
  
-    {{-- Jquery --}}
-    <script src="{{ asset('JS/javascript.js') }}"></script>
 
     {{-- Content --}} 
     @yield('script')
