@@ -11,9 +11,12 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <!-- Leaflet CSS -->
+    <link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet">
+
     <title>{{ $title }}</title>
   </head>
-  <body class="bg-dark text-white d-flex flex-column min-vh-100"">
+  <body class="bg-dark text-white d-flex flex-column min-vh-100">
 
       
     {{-- Navbar --}}
@@ -33,6 +36,9 @@
     <!-- JS Bootstrap -->
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+    <!-- Leaflet Js -->
+    <script src="{{ asset('leaflet/leaflet.js') }}"></script>
+    
     {{-- Content --}} 
     @yield('script')
   </body>

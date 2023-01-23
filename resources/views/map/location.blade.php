@@ -9,9 +9,6 @@
     }
 </style>
 
-<!-- Leaflet CSS -->
-<link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet">
-
 <h1 class="text-center">Save Location</h1>
 
 <form action="/map/location" method="post">
@@ -37,8 +34,6 @@
 </form>
 
 @section('script')
-<!-- Leaflet Js -->
-<script src="{{ asset('leaflet/leaflet.js') }}"></script>
 
 <script>
 // Long and Lat

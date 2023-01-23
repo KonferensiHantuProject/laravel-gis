@@ -9,19 +9,13 @@
     }
 </style>
 
-<!-- Leaflet CSS -->
-<link href="{{ asset('leaflet/leaflet.css') }}" rel="stylesheet">
-
 <h1 class="text-center">Map</h1>
 
 {{-- Place For the Map --}}
 <div id='map'></div>
 
-<!-- Leaflet Js -->
-<script src="{{ asset('leaflet/leaflet.js') }}"></script>
-
+@section('script')
 <script>
-
 // Controll Map View
 let map = L.map('map', {
     center: [41.505, -0.09],
@@ -49,4 +43,5 @@ onMapClick = (e) => {
 map.on('click', onMapClick);
 </script>
 
+@endsection
 @endsection
