@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-white" href="/">Home</a>
+            <a class="nav-link @if($title == 'Index')active @endif text-white" href="/">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/map">Map</a></li>
+              <li><a class="dropdown-item @if($title == 'Map')active @endif" href="/map">Map</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/map/location">Location</a></li>
+              <li><a class="dropdown-item @if($title == 'Location')active @endif" href="/map/location">Location</a></li>
             </ul>
           </li>
         </ul>
