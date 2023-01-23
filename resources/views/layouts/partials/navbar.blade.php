@@ -16,6 +16,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/map">Map</a></li>
               <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/map/location">Location</a></li>
             </ul>
           </li>
         </ul>

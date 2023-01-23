@@ -32,7 +32,6 @@
     
     <!-- JS Bootstrap -->
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
- 
 
     {{-- Content --}} 
     @yield('script')

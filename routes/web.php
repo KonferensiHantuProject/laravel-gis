@@ -22,6 +22,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::prefix('/map')->group(function () {
     Route::get('/', [MapController::class, 'index']);
+    Route::get('/location', [MapController::class, 'location']);
+    Route::post('/location', [MapController::class, 'save_location']);
 });
 
 // Route::middleware('guest')->prefix('/app')->group(function () {
