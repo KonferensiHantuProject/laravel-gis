@@ -8,6 +8,8 @@ interface MapInterface
     public function index();
 
     public function location();
-
+    
     public function save_location(Request $request);
+
+    public function saved();
 }

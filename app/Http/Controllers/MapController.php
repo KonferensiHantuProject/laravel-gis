@@ -26,4 +26,8 @@ class MapController extends Controller
     {
        return $this->mapInterface->save_location($request);
     }
+    public function saved()
+    {
+       return $this->mapInterface->saved();
+    }
 }

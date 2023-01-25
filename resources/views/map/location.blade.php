@@ -11,6 +11,11 @@
 
 <h1 class="text-center">Save Location</h1>
 
+{{-- Button --}}
+<div class="text-end">
+    <a href="/map/saved" class="mt-3 mb-2 btn btn-primary">View Saved Location</a>
+</div>
+
 <form action="/map/location" method="post">
     @csrf
     {{-- Place For the Map --}}

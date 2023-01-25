@@ -61,4 +61,22 @@ class MapRepository implements MapInterface
         }
     }
 
+    public function saved()
+    {
+        try {
+
+            // Get All Locations
+            $locations = Location::get();
+
+            $data = [
+                'title' => 'Saved Location',
+                'locations' => $locations
+            ];
+    
+            return view('map.custom', $data);
+
+        } catch (Exception $e) {
+            dd($e);
+        }
+    }
 }

@@ -22,6 +22,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::prefix('/map')->group(function () {
     Route::get('/', [MapController::class, 'index']);
+    Route::get('/saved', [MapController::class, 'saved']);
     Route::get('/location', [MapController::class, 'location']);
     Route::post('/location', [MapController::class, 'save_location']);
 });
