@@ -2,7 +2,7 @@
 
 @section('container')
 
-<h1 class="text-center">List of Saved Location</h1>
+<h1 class="text-center">List of Saved Locations</h1>
 
 {{-- Button --}}
 <div class="text-end">
