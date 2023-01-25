@@ -25,7 +25,7 @@
         <td>{{ $location->location }}</td>
         <td>{{ \App\Helpers\DateHelper::toDay($location->created_at) }}</td>
         <td>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-map-modal" class="btn btn-primary text-white">Detail</a>
+            <a href="#" data-bs-toggle="modal" data-action="{{ route('map.location', ['id'=> $location->id ]) }}" data-bs-target="#detail-map-modal" class="btn btn-primary text-white detail_button">Detail</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#update-map-modal" class="btn btn-warning text-white">Update</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#delete-map-modal" class="btn btn-danger">Delete</a>
         </td>
@@ -34,7 +34,12 @@
     </tbody>
   </table>
 
+
 {{-- Modal Update --}}
 @include('map.modals.detail')
+
+@section('script')
+  <script src="{{ asset('JS/Map/index.js') }}" defer></script>
+@endsection
 
 @endsection

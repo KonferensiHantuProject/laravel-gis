@@ -22,6 +22,11 @@ class MapController extends Controller
        return $this->mapInterface->location();
     }
 
+    public function location_detail(int $id)
+    {
+       return $this->mapInterface->location_detail($id);
+    }
+
     public function save_location(Request $request)
     {
        return $this->mapInterface->save_location($request);

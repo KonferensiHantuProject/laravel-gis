@@ -23,8 +23,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::prefix('/map')->group(function () {
     Route::get('/', [MapController::class, 'index']);
     Route::get('/saved', [MapController::class, 'saved']);
-    Route::get('/location', [MapController::class, 'location']);
-    Route::post('/location', [MapController::class, 'save_location']);
+
+    // Location
+    Route::prefix('/location')->group(function () {
+        Route::get('/', [MapController::class, 'location']);
+        Route::get('/{id}', [MapController::class, 'location_detail'])->name('map.location');
+        Route::post('/', [MapController::class, 'save_location']);
+    });
 });
 
 // Route::middleware('guest')->prefix('/app')->group(function () {

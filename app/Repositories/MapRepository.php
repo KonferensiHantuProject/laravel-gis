@@ -41,6 +41,26 @@ class MapRepository implements MapInterface
         }
     }
 
+    public function location_detail(int $id)
+    {
+        try {
+
+            $location = Location::find($id);
+
+            return response()->json([
+                'success'=>'Data is successfully retrieved',
+                'id' => $location->id,
+                'location' => $location->location,
+                'lat' => $location->lat,
+                'long' => $location->long,
+                'created_at' => $location->created_at
+            ]);
+
+        } catch (Exception $e) {
+            dd($e);
+        }
+    }
+
     public function save_location(Request $request)
     {
         DB::beginTransaction();
