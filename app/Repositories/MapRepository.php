@@ -81,6 +81,24 @@ class MapRepository implements MapInterface
         }
     }
 
+    public function delete_location(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            // Deleting Data
+            $data = Location::find($request->id);
+            $data->delete();
+
+            DB::commit();
+
+            return redirect('/map/saved');
+        } catch (Exception $e) {
+            DB::rollback();
+            dd($e);
+        }
+    }
+
     public function saved()
     {
         try {

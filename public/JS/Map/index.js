@@ -17,10 +17,11 @@ initial = (lat, long) => {
 $(document).ready(function(){
 
     // Button
-    var button_update = '.detail_button';
+    var button_detail = '.detail_button';
+    var button_delete = '.delete_button';
 
     // Fetching Data to form Detail
-    $(button_update).on('click', function(event){
+    $(button_detail).on('click', function(event){
         event.preventDefault();
 
         var url = $(this).attr('data-action');
@@ -46,6 +47,30 @@ $(document).ready(function(){
 
                 // Initialize Map
                 initial(response.long, response.lat)
+            },
+            error: function(response) {
+                console.log(response)
+            }
+        });
+    });
+
+    // Fetching Data to form Delete
+    $(button_delete).on('click', function(event){
+        event.preventDefault();
+
+        var url = $(this).attr('data-action');
+
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'JSON',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function(response)
+            {
+                // Change Data
+                $('#id_delete').val(response.id);
             },
             error: function(response) {
                 console.log(response)
