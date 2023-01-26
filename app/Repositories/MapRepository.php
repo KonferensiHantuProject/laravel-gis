@@ -99,6 +99,31 @@ class MapRepository implements MapInterface
         }
     }
 
+    public function update_location(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            // Deleting Data
+            $data = Location::find($request->id);
+            $data->location = $request->location;
+            $data->lat = $request->longitude;
+            $data->long = $request->latitude;
+            $data->save();
+
+            DB::commit();
+
+            return redirect('/');
+
+            DB::commit();
+
+            return redirect('/map/saved');
+        } catch (Exception $e) {
+            DB::rollback();
+            dd($e);
+        }
+    }
+
     public function saved()
     {
         try {

@@ -28,6 +28,7 @@ Route::prefix('/map')->group(function () {
     Route::prefix('/location')->group(function () {
         Route::get('/', [MapController::class, 'location']);
         Route::delete('/', [MapController::class, 'delete_location'])->name('map.location.delete');
+        Route::put('/', [MapController::class, 'update_location'])->name('map.location.update');
         Route::get('/{id}', [MapController::class, 'location_detail'])->name('map.location');
         Route::post('/', [MapController::class, 'save_location']);
     });
