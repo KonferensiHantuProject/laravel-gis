@@ -17,6 +17,8 @@
               <li><a class="dropdown-item @if($title == 'Map')active @endif" href="/map">Map</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item @if($title == 'Location')active @endif" href="/map/location">Location</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item @if($title == 'Saved Location')active @endif" href="/map/saved">List Location</a></li>
             </ul>
           </li>
         </ul>
