@@ -15,5 +15,7 @@ interface MapInterface
 
     public function delete_location(Request $request);
 
+    public function update_location(Request $request);
+
     public function saved();
 }
