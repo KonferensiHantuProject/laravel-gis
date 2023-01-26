@@ -31,6 +31,12 @@ class MapController extends Controller
     {
        return $this->mapInterface->save_location($request);
     }
+
+    public function delete_location(Request $request)
+    {
+       return $this->mapInterface->delete_location($request);
+    }
+
     public function saved()
     {
        return $this->mapInterface->saved();

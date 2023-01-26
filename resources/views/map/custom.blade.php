@@ -27,7 +27,7 @@
         <td>
             <a href="#" data-bs-toggle="modal" data-action="{{ route('map.location', ['id'=> $location->id ]) }}" data-bs-target="#detail-map-modal" class="btn btn-primary text-white detail_button">Detail</a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#update-map-modal" class="btn btn-warning text-white">Update</a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#delete-map-modal" class="btn btn-danger">Delete</a>
+            <a href="#" data-bs-toggle="modal" data-action="{{ route('map.location', ['id'=> $location->id ]) }}" data-bs-target="#delete-map-modal" class="btn btn-danger delete_button">Delete</a>
         </td>
       </tr>
       @endforeach
@@ -35,11 +35,14 @@
   </table>
 
 
-{{-- Modal Update --}}
+{{-- Modal Detail --}}
 @include('map.modals.detail')
 
+{{-- Modal Delete --}}
+@include('map.modals.delete')
+
 @section('script')
-  <script src="{{ asset('JS/Map/index.js') }}" defer></script>
+  <script src="{{ asset('JS/Map/index.js') }}"></script>
 @endsection
 
 @endsection
