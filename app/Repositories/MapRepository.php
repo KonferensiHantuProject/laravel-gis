@@ -74,7 +74,7 @@ class MapRepository implements MapInterface
 
             DB::commit();
 
-            return redirect('/');
+            return redirect('/')->with('success', 'Custom Location Name Saved');
         } catch (Exception $e) {
             DB::rollback();
             dd($e);

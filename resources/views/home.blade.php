@@ -3,6 +3,13 @@
 @section('container')
 
 <div class="row">
+    {{-- Alerts --}}
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    
     <div class="col-md-6">
         <h1 style="margin-top: 200px">Welcome</h1>
         <p>This is an example How to use Laravel with Leaflet JS</p>
