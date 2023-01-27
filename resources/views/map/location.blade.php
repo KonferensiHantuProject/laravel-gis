@@ -18,6 +18,13 @@
 
 <form action="/map/location" method="post">
     @csrf
+
+    @if ($errors->has('location'))
+        <div class="alert alert-danger" role="alert">
+            {{ $errors->first('location') }}
+        </div>
+    @endif
+
     {{-- Place For the Map --}}
     <div id='map' class="mb-5"></div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Map\StoreRequest;
 use App\Interfaces\MapInterface;
 
 class MapController extends Controller
@@ -27,7 +28,7 @@ class MapController extends Controller
        return $this->mapInterface->location_detail($id);
     }
 
-    public function save_location(Request $request)
+    public function save_location(StoreRequest $request)
     {
        return $this->mapInterface->save_location($request);
     }
