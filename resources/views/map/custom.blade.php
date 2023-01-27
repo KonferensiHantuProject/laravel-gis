@@ -4,6 +4,18 @@
 
 <h1 class="text-center">List of Saved Locations</h1>
 
+{{-- Alerts --}}
+@if(session()->has('updated'))
+  <div class="alert alert-success" role="alert">
+    {{ session('updated') }}
+  </div>
+@endif
+@if(session()->has('deleted'))
+  <div class="alert alert-danger" role="alert">
+    {{ session('deleted') }}
+  </div>
+@endif
+
 {{-- Button --}}
 <div class="text-end">
     <a href="/map/location" class="mt-3 btn btn-primary">Back to Form</a>

@@ -93,7 +93,7 @@ class MapRepository implements MapInterface
 
             DB::commit();
 
-            return redirect('/map/saved');
+            return redirect('/map/saved')->with('deleted', 'Custom Location Deleted');
         } catch (Exception $e) {
             DB::rollback();
             dd($e);
@@ -114,11 +114,7 @@ class MapRepository implements MapInterface
 
             DB::commit();
 
-            return redirect('/');
-
-            DB::commit();
-
-            return redirect('/map/saved');
+            return redirect('/map/saved')->with('updated', 'Custom Location Name Updated');
         } catch (Exception $e) {
             DB::rollback();
             dd($e);
