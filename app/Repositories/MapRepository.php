@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interfaces\MapInterface;
 use Illuminate\Http\Request;
 use App\Models\Location;
+use App\Http\Requests\Map\StoreRequest;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
@@ -61,7 +62,7 @@ class MapRepository implements MapInterface
         }
     }
 
-    public function save_location(Request $request)
+    public function save_location(StoreRequest $request)
     {
         DB::beginTransaction();
         try {
