@@ -25,8 +25,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'location' => 'required|string',
-            'lat' => 'required',
-            'long' => 'required'
+            'latitude' => 'required',
+            'longitude' => 'required'
         ];
     }
 }
