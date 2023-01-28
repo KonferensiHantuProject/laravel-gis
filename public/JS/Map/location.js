@@ -1,5 +1,7 @@
 // Location
 let loc = $('#location_name');
+let invalild_loc = $('#invalid_location');
+let valild_loc = $('#valid_location');
 
 // Long and Lat
 let long = $('#longitude');
@@ -35,3 +37,48 @@ onMapClick = (e) => {
 // Listener
 map.on('click', onMapClick);
 
+// Ajax Setup
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+// Fetching Data to form Detail
+$(loc).on('keyup', function(event){
+    // event.preventDefault();
+
+    let url = $(this).attr('data-action');
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: { location_name: loc.val() },
+        dataType: 'JSON',
+        success:function(response)
+        {
+            // Checking Response
+            if(response.warning)
+            {
+                // Removing Valid Class
+                if(loc.hasClass("is-valid")) loc.removeClass("is-valid");
+
+                // Add Invalid Class
+                loc.addClass("is-invalid");
+                invalild_loc.html(response.warning);
+            }else{
+                // Removing Invalid Class
+                if(loc.hasClass("is-invalid")) loc.removeClass("is-invalid");
+
+                // Add Valid
+                loc.addClass("is-valid");
+                valild_loc.html(response.success);
+            }
+
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    });
+});

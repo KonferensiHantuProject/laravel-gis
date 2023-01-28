@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Location;
 use App\Http\Requests\Map\StoreRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Exception;
 
 class MapRepository implements MapInterface
@@ -21,6 +22,30 @@ class MapRepository implements MapInterface
             ];
     
             return view('map.index', $data);
+
+        } catch (Exception $e) {
+            dd($e);
+        }
+    }
+
+    public function find(Request $request)
+    {
+        try {
+            
+            // Finding Double Data
+            $location = Location::where('location', $request->location_name)->first();
+
+            // If Double Location Name Exist
+            if($location)
+            { 
+                return response()->json([
+                    'warning'=>'The Custom Name is Already Used',
+                ]);
+            }else{
+                return response()->json([
+                    'success'=>'The Custom Name Have Not Been Used'
+                ]);
+            }
 
         } catch (Exception $e) {
             dd($e);

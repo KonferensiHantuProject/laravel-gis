@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <style>
     #map { 
@@ -42,7 +43,9 @@
     <div class="row">
         {{-- Location Name --}}
         <div class="col-md-6 mb-3 mt-3">
-            <input type="text" class="form-control" id="location_name" name="location" placeholder="The City Of..." required>
+            <input type="text" class="form-control" data-action="{{ route('map.find') }}" id="location_name" name="location" placeholder="The City Of..." required>
+            <div id="invalid_location" class="invalid-feedback"></div>
+            <div id="valid_location" class="valid-feedback"></div>
         </div>
 
         {{-- Hidden --}}
