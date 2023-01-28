@@ -18,6 +18,11 @@ class MapController extends Controller
        return $this->mapInterface->index();
     }
 
+    public function find(Request $request)
+    {
+       return $this->mapInterface->find($request);
+    }
+
     public function location()
     {
        return $this->mapInterface->location();
