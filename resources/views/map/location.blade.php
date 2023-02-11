@@ -6,7 +6,7 @@
 <style>
     #map { 
         height: 450px;
-        margin-top: 25px; 
+        margin-top: 25px;
     }
 </style>
 
