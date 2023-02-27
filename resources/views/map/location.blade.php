@@ -10,7 +10,7 @@
     }
 </style>
 
-<h1 class="text-center">Create Your Custom Location</h1>
+<h1 class="text-center">Create Your Own Custom Location</h1>
 
 {{-- Button --}}
 <div class="text-end">
