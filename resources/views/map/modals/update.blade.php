@@ -39,8 +39,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Yes</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>
